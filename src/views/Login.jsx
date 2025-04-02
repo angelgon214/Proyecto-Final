@@ -82,19 +82,6 @@ export default function Login() {
             <button className="btn btn-dark w-100" onClick={handleLogin}>
               Login
             </button>
-
-            <div className="mt-3 text-center">
-              <p className="text-center">¿Olvidaste la contraseña?</p>
-              <div className="d-flex justify-content-center">
-                <button
-                  className="btn btn-outline-dark"
-                  onClick={() => navigate("/loginPage")}
-                >
-                  <i className="fab fa-google"></i> Probar otro método
-                </button>
-              </div>
-            </div>
-
           </>
         ) : (
           <>

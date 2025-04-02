@@ -68,28 +68,6 @@ export const register = async (username, email, password) => {
   }
 };
 
-export const altLogin = async (email) => {
-  try {
-    const response = await axios.post(`${API_URL}/alt-login`, { email });
-
-    if (response.data.requiresMFA) {
-      return {
-        success: true,
-        requiresMFA: true,
-        qrCodeUrl: response.data.qrCodeUrl
-      };
-    }
-
-    return { success: false, message: response.data.message || "Error desconocido" };
-
-  } catch (error) {
-    return {
-      success: false,
-      message: error.response?.data?.message || "Error desconocido"
-    };
-  }
-};
-
 export const verifyOTP = async (email, token) => {
   try {
     const response = await axios.post(`${API_URL}/verify-otp`, {
