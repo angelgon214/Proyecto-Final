@@ -1,7 +1,7 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://practica-syf7.onrender.com/api";
 
 export const login = async (email, password) => {
   try {
