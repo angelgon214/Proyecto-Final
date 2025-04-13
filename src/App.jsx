@@ -5,6 +5,7 @@ import Login from "./views/Login";
 import Home from "./views/Home";
 import Register from "./views/Register";
 import Logs from "./views/Logs";
+import ForgotPassword from "./views/Restablecercontraseña";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const PrivateRoute = ({ children }) => {
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/restablecer/contraseña" element={<ForgotPassword />} />
         <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
         <Route path="/logs" element={<PrivateRoute><Logs /></PrivateRoute>} />
         <Route path="/" element={<Navigate to="/Login" />} />

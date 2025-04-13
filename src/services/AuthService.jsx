@@ -68,6 +68,33 @@ export const register = async (username, email, password) => {
   }
 };
 
+export const forgotPassword = async (email) => {
+  try {
+    const response = await axios.post(`${API_URL}/forgot-password`, { email });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Error al verificar el correo');
+  }
+};
+
+export const verifyOtpReset = async (email, otp) => {
+  try {
+    const response = await axios.post(`${API_URL}/verify-otp-reset`, { email, otp });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Error al verificar el código MFA');
+  }
+};
+
+export const resetPassword = async (email, newPassword) => {
+  try {
+    const response = await axios.post(`${API_URL}/reset-password`, { email, newPassword });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Error al actualizar la contraseña');
+  }
+};
+
 export const verifyOTP = async (email, token) => {
   try {
     const response = await axios.post(`${API_URL}/verify-otp`, {

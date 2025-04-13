@@ -80,7 +80,7 @@ const Register = () => {
 
             <div className="text-center mt-3">
               <a href="/login" className="text-primary text-decoration-none">
-                ¿Ya tienes una cuenta? Click aquí
+                ¿Ya tienes cuenta? Inicia sesión
               </a>
             </div>
 
